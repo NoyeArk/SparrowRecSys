@@ -108,7 +108,6 @@ object Embedding {
 
     val model = word2vec.fit(samples)
 
-
     val synonyms = model.findSynonyms("158", 20)
     for ((synonym, cosineSimilarity) <- synonyms) {
       println(s"$synonym $cosineSimilarity")
@@ -122,7 +121,7 @@ object Embedding {
     }
     bw.close()
 
-    if (saveToRedis) {
+    if (true) {
       val redisClient = new Jedis(redisEndpoint, redisPort)
       val params = SetParams.setParams()
       //set ttl to 24hs
