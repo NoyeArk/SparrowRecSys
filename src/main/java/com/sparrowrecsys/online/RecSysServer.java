@@ -25,7 +25,6 @@ public class RecSysServer {
     private static final int DEFAULT_PORT = 6010;
 
     public void run() throws Exception{
-
         int port = DEFAULT_PORT;
         try {
             port = Integer.parseInt(System.getenv("PORT"));
