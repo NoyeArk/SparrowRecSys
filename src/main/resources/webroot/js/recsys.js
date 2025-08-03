@@ -169,7 +169,9 @@ function addRecForYou(pageId, containerId, userId, model, baseUrl){
                 </div>\
                </div>'
     $(pageId).prepend(rowDiv);
-
+    // console.log(userId, model, baseUrl);
+    // 490 emb http://localhost:6010/
+    // http://localhost:6010/getrecforyou?id=490&size=32&model=emb
     $.getJSON(baseUrl + "getrecforyou?id="+userId+"&size=32&model=" + model, function(result){
                 $.each(result, function(i, movie){
                   appendMovie2Row(containerId, movie.title, movie.movieId, movie.releaseYear, movie.averageRating.toPrecision(2), movie.ratingNumber, movie.genres,baseUrl);

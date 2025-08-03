@@ -49,6 +49,7 @@ for feature, vocab in GENRE_FEATURES.items():
         key=feature, vocabulary_list=vocab)
     emb_col = tf.feature_column.embedding_column(cat_col, 10)
     categorical_columns.append(emb_col)
+
 # movie id embedding feature
 movie_col = tf.feature_column.categorical_column_with_identity(key='movieId', num_buckets=1001)
 movie_emb_col = tf.feature_column.embedding_column(movie_col, 10)
